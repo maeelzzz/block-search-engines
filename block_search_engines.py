@@ -18,9 +18,9 @@ def main():
     args = parser.parse_args()
 
     if args.choices == "iptables":
-        block = "iptables -A INPUT -s {} -j DROP"
+        block = "sudo iptables -A INPUT -s {} -j DROP"
     elif args.choices == "ufw":
-        block = "ufw insert 1 deny from {}"
+        block = "sudo ufw deny from {} to any"
 
     ips = [
         #Shodan
