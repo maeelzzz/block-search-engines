@@ -1,6 +1,5 @@
-import os
 import argparse
-
+import subprocess
 
 def main():
     parser = argparse.ArgumentParser()
@@ -112,7 +111,7 @@ def main():
     ]
 
     for i in ips:
-        os.system(block.format(i))
+        subprocess.run(block.format(i), shell=True)
 
 if __name__ == "__main__":
     main()
